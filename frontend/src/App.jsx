@@ -1,11 +1,7 @@
-import SignIn from "./SignIn";
+import LandingPage from "./LandingPage";
 
 const App = () => {
-  return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <SignIn />
-    </div>
-  );
+  return <LandingPage />;
 };
 
 export default App;
