@@ -99,21 +99,21 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-900 flex flex-col">
+    <div className="min-h-screen bg-gray-900 flex flex-col font-sans">
       {/* Navbar */}
       <nav className="bg-gray-800 shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
-              <h1 className="text-xl font-bold text-blue-400">InternSight</h1>
+              <h1 className="text-2xl font-bold text-blue-400 tracking-tight">InternSight</h1>
             </div>
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-6">
               {user ? (
                 <>
-                  <p className="text-gray-300">Welcome, {user.displayName || user.email}</p>
+                  <p className="text-gray-300 font-medium">Welcome, {user.displayName || user.email}</p>
                   <button
                     onClick={handleLogout}
-                    className="text-red-400 hover:text-red-300 transition"
+                    className="text-red-400 hover:text-red-300 transition font-medium"
                   >
                     Log Out
                   </button>
@@ -122,13 +122,13 @@ const LandingPage = () => {
                 <>
                   <button
                     onClick={() => openModal(false)}
-                    className="text-blue-400 hover:text-blue-300 transition"
+                    className="text-blue-400 hover:text-blue-300 transition font-medium"
                   >
                     Sign In
                   </button>
                   <button
                     onClick={() => openModal(true)}
-                    className="text-green-400 hover:text-green-300 transition"
+                    className="text-green-400 hover:text-green-300 transition font-medium"
                   >
                     Sign Up
                   </button>
@@ -140,57 +140,58 @@ const LandingPage = () => {
       </nav>
 
       {/* Landing Section */}
-      <section className="flex flex-col items-center justify-center flex-1 py-16 bg-gray-900">
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-4 text-center">
+      <section className="flex flex-col items-center justify-center flex-1 py-20 bg-gray-900">
+        <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 text-center leading-tight tracking-tight">
           Organize Your Internship Applications with InternSight
         </h2>
-        <p className="text-lg sm:text-xl text-gray-300 mb-8 text-center max-w-2xl">
+        <p className="text-lg sm:text-xl text-gray-300 mb-10 text-center max-w-2xl leading-relaxed">
           InternSight helps you track your internship applications, monitor status updates, and stay organized with a simple, intuitive interface.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 mb-12">
+        <div className="flex flex-col sm:flex-row gap-4 mb-16">
           <button
             onClick={() => openModal(false)}
-            className="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition"
+            className="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition shadow-lg hover:shadow-xl"
           >
             Get Started
           </button>
           <button
             onClick={() => openModal(true)}
-            className="bg-green-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-green-700 transition"
+            className="bg-green-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-green-700 transition shadow-lg hover:shadow-xl"
           >
             Sign Up
           </button>
         </div>
+
         {/* Features Section */}
         <div className="w-full max-w-5xl">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-gray-800 rounded-lg shadow p-6 flex flex-col items-center hover:bg-gray-700 transition">
-              <svg className="w-12 h-12 text-blue-400 mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <div className="bg-gray-800 rounded-xl shadow-lg p-8 flex flex-col items-center hover:bg-gray-700 transition transform hover:scale-105">
+              <svg className="w-12 h-12 text-blue-400 mb-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path d="M9 17v-2a4 4 0 0 1 4-4h4" />
                 <circle cx="9" cy="7" r="4" />
                 <path d="M17 21v-2a4 4 0 0 0-3-3.87" />
               </svg>
-              <h3 className="text-xl font-semibold mb-2 text-white">Track Applications</h3>
-              <p className="text-gray-300 text-center">
+              <h3 className="text-xl font-semibold mb-3 text-white">Track Applications</h3>
+              <p className="text-gray-300 text-center leading-relaxed">
                 Keep all your internship applications in one place and never miss a deadline.
               </p>
             </div>
-            <div className="bg-gray-800 rounded-lg shadow p-6 flex flex-col items-center hover:bg-gray-700 transition">
-              <svg className="w-12 h-12 text-green-400 mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <div className="bg-gray-800 rounded-xl shadow-lg p-8 flex flex-col items-center hover:bg-gray-700 transition transform hover:scale-105">
+              <svg className="w-12 h-12 text-green-400 mb-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path d="M5 13l4 4L19 7" />
               </svg>
-              <h3 className="text-xl font-semibold mb-2 text-white">Status Updates</h3>
-              <p className="text-gray-300 text-center">
+              <h3 className="text-xl font-semibold mb-3 text-white">Status Updates</h3>
+              <p className="text-gray-300 text-center leading-relaxed">
                 Easily update and view the status of each application as you progress.
               </p>
             </div>
-            <div className="bg-gray-800 rounded-lg shadow p-6 flex flex-col items-center hover:bg-gray-700 transition">
-              <svg className="w-12 h-12 text-purple-400 mb-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <div className="bg-gray-800 rounded-xl shadow-lg p-8 flex flex-col items-center hover:bg-gray-700 transition transform hover:scale-105">
+              <svg className="w-12 h-12 text-purple-400 mb-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="10" />
                 <path d="M8 12h8M12 8v8" />
               </svg>
-              <h3 className="text-xl font-semibold mb-2 text-white">Simple UI</h3>
-              <p className="text-gray-300 text-center">
+              <h3 className="text-xl font-semibold mb-3 text-white">Simple UI</h3>
+              <p className="text-gray-300 text-center leading-relaxed">
                 Enjoy a clean and intuitive user interface designed for ease of use.
               </p>
             </div>
@@ -200,13 +201,21 @@ const LandingPage = () => {
 
       {/* Modal */}
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+          style={{
+            animation: 'fadeIn 0.3s ease-in-out'
+          }}
+        >
           <div
             ref={modalRef}
-            className="bg-gray-800 rounded-xl shadow-lg p-6 w-full max-w-md mx-4 transform transition-all duration-300 ease-in-out scale-100"
+            className="bg-gray-800 rounded-xl shadow-lg p-8 w-full max-w-md mx-4"
+            style={{
+              animation: 'fadeIn 0.3s ease-in-out'
+            }}
           >
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-2xl font-bold text-white">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-2xl font-bold text-white tracking-tight">
                 {isSignUp ? "Sign Up" : "Sign In"}
               </h2>
               <button
@@ -218,56 +227,56 @@ const LandingPage = () => {
                 </svg>
               </button>
             </div>
-            {error && <p className="text-red-400 mb-4">{error}</p>}
-            <form className="space-y-4">
+            {error && <p className="text-red-400 mb-4 font-medium">{error}</p>}
+            <form className="space-y-5">
               {isSignUp && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-300">First Name</label>
+                    <label className="block text-sm font-medium text-gray-300 mb-2">First Name</label>
                     <input
                       type="text"
                       value={firstName}
                       onChange={(e) => setFirstName(e.target.value)}
-                      className="mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-white"
+                      className="mt-1 block w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white transition"
                       required
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-300">Last Name</label>
+                    <label className="block text-sm font-medium text-gray-300 mb-2">Last Name</label>
                     <input
                       type="text"
                       value={lastName}
                       onChange={(e) => setLastName(e.target.value)}
-                      className="mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-white"
+                      className="mt-1 block w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white transition"
                       required
                     />
                   </div>
                 </div>
               )}
               <div>
-                <label className="block text-sm font-medium text-gray-300">Email</label>
+                <label className="block text-sm font-medium text-gray-300 mb-2">Email</label>
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-white"
+                  className="mt-1 block w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white transition"
                   required
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-300">Password</label>
+                <label className="block text-sm font-medium text-gray-300 mb-2">Password</label>
                 <input
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-white"
+                  className="mt-1 block w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white transition"
                   required
                 />
               </div>
               <div className="flex space-x-4">
                 <button
                   onClick={isSignUp ? handleRegister : handleSignIn}
-                  className="flex-1 bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"
+                  className="flex-1 bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition shadow-lg hover:shadow-xl"
                 >
                   {isSignUp ? "Sign Up" : "Sign In"}
                 </button>
@@ -280,4 +289,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage; 
+export default LandingPage;
